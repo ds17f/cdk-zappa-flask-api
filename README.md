@@ -37,3 +37,7 @@ poetry install
 poetry run cdk deploy
 ```
 
+## Try it out
+```
+curl https://itbwdxnrg8.execute-api.us-east-1.amazonaws.com/prod/
+```
