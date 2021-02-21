@@ -13,7 +13,7 @@ cdk is a `nodejs` app.  Even though this project is written in python you'll nee
 
 Install cdk with
 ```
-npm install -g cdk
+npm install -g aws-cdk
 ```
 
 ### Install poetry
