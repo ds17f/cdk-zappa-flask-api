@@ -1,4 +1,4 @@
-# cdk-slackbot
+# cdk-gitbot
 This is a `cdk` project which uses `poetry` to manage the package and environment
 
 ## Prerequisites

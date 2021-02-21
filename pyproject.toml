@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "cdk-slackbot"
+name = "cdk-gitbot"
 version = "0.1.0"
-description = "A slackbot powered by CDK"
+description = "A gitbot powered by CDK"
 authors = ["Damian Silbergleith <dsilberg@godaddy.com>"]
 
 [tool.poetry.dependencies]

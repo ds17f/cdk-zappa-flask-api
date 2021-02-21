@@ -2,10 +2,10 @@
 
 from aws_cdk import core
 
-from cdk_slackbot.cdk_slackbot_stack import CdkSlackbotStack
+from cdk_gitbot.cdk_gitbot_stack import CdkGitbotStack
 
 
 app = core.App()
-CdkSlackbotStack(app, "cdk-slackbot")
+CdkGitbotStack(app, "cdk-gitbot")
 
 app.synth()
