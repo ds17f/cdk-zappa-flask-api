@@ -5,6 +5,7 @@ from lambda_src import main
 
 
 class Handler(unittest.TestCase):
+    """main.handler"""
     def setUp(self) -> None:
         # Arrange
         self.mock_method = Mock()
@@ -18,19 +19,16 @@ class Handler(unittest.TestCase):
             }
         }).start()
 
-        self.mock_event = "MOCK_EVENT"
-        self.mock_context = self.make_context(self.mock_method, self.mock_path)
+        self.mock_event = self.make_event(self.mock_method, self.mock_path)
+        self.mock_context = "MOCK_CONTEXT"
 
     def tearDown(self) -> None:
         patch.stopall()
 
-    """main.handler"""
-    def make_context(self, http_method, path):
+    def make_event(self, http_method, path):
         return {
-            "requestContext": {
-                "httpMethod": http_method,
-                "path": path,
-            },
+            "httpMethod": http_method,
+            "path": path,
         }
 
     def test_calls_handler_fn_when_found(self):
@@ -58,19 +56,19 @@ class Handler(unittest.TestCase):
         raises an exception when httpMethod is of unknown type
         """
         # Arrange
-        mock_context = self.make_context(Mock(), Mock())
+        mock_event = self.make_event(Mock(), Mock())
 
         # Act / Assert
         with self.assertRaises(Exception):
-            main.handler(self.mock_event, mock_context)
+            main.handler(mock_event, self.mock_context)
 
     def test_handler_raises_exception_on_unknown_path(self):
         """
         raises an exception when httpMethod is valid but path is not
         """
         # Arrange
-        mock_context = self.make_context(http_method=self.mock_method, path=Mock())
+        mock_event = self.make_event(http_method=self.mock_method, path=Mock())
 
         # Act / Assert
         with self.assertRaises(Exception):
-            main.handler(self.mock_event, mock_context)
+            main.handler(self.mock_context, mock_event)
