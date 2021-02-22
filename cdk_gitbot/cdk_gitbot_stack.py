@@ -15,7 +15,7 @@ class CdkGitbotStack(core.Stack):
             scope=self,
             id="HandlerFunction",
             runtime=aws_lambda.Runtime.PYTHON_3_8,
-            code=aws_lambda.Code.from_asset('lambda'),
+            code=aws_lambda.Code.from_asset('lambda_src'),
             handler="main.handler",
         )
 
