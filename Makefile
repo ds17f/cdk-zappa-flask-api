@@ -24,12 +24,12 @@ cdk-diff: init build-lambda
 
 .PHONY: cdk-deploy
 cdk-deploy: init build-lambda
-	poetry run cdk deploy
+	poetry run cdk deploy -y
 
 .PHONY: clean
 clean: clean-pycache
 	rm ${lambda_output_filename}
-#	rm -rf build
+	rm -rf build
 #	rm -rf cloudformer_api.egg-info
 #	rm -rf dist
 #	rm -f MANIFEST

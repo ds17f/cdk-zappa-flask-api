@@ -18,7 +18,7 @@ class CdkGitbotStack(core.Stack):
             id="HandlerFunction",
             runtime=aws_lambda.Runtime.PYTHON_3_8,
             code=aws_lambda.Code.asset(ZAPPA_LAMBDA_PACKAGE),
-            handler="main.handler",
+            handler="handler.lambda_handler",
             timeout=core.Duration.seconds(15)
         )
 

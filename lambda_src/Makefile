@@ -16,5 +16,6 @@ init:
 .PHONY: build-lamdba
 build: init
 	poetry install && \
+	mkdir -p ../build && \
 	poetry run zappa package dev -o ../build/${lambda_output_filename}
 
