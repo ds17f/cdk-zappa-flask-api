@@ -4,6 +4,8 @@ from aws_cdk import (
     aws_lambda,
 )
 
+ZAPPA_LAMBDA_PACKAGE = "build/lambda_output.zip"
+
 
 class CdkGitbotStack(core.Stack):
 
@@ -15,8 +17,9 @@ class CdkGitbotStack(core.Stack):
             scope=self,
             id="HandlerFunction",
             runtime=aws_lambda.Runtime.PYTHON_3_8,
-            code=aws_lambda.Code.from_asset('lambda_src'),
+            code=aws_lambda.Code.asset(ZAPPA_LAMBDA_PACKAGE),
             handler="main.handler",
+            timeout=core.Duration.seconds(15)
         )
 
         # define the apigateway

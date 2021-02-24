@@ -1,3 +1,4 @@
+.DS_Store
 *.swp
 package-lock.json
 __pycache__
@@ -12,3 +13,7 @@ cdk.out
 
 # jetbrains
 .idea/
+
+# build artifacts
+build/
+

@@ -1,0 +1,9 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "profile_name": "default",
+        "project_name": "lambda-src",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-f4zrgbjdm"
+    }
+}
