@@ -28,7 +28,8 @@ cdk-bootstrap: init
 
 .PHONY: cdk-deploy
 cdk-deploy: init cdk-bootstrap build-lambda
-	poetry run cdk deploy -y
+	poetry run cdk deploy --require-approval never
+
 
 .PHONY: clean
 clean: clean-pycache
