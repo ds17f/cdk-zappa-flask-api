@@ -21,9 +21,13 @@ build-lambda:
 cdk-diff: init build-lambda
 	poetry run cdk diff
 
+.PHONY: cdk-bootstrap
+cdk-bootstrap: init
+	poetry run cdk bootstrap
+
 
 .PHONY: cdk-deploy
-cdk-deploy: init build-lambda
+cdk-deploy: init cdk-bootstrap build-lambda
 	poetry run cdk deploy -y
 
 .PHONY: clean
