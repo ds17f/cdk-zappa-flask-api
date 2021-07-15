@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "cdk_gitbot_lamdba"
+version = "0.1.0"
+description = "The lamdba code for the cdk gitbot"
+authors = ["Damian Silbergleith <dsilberg@godaddy.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+zappa = "^0.52.0"
+Flask = "^1.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
