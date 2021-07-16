@@ -30,7 +30,7 @@ class CdkGitbotStack(core.Stack):
             id="DemoTable",
             partition_key=aws_dynamodb.Attribute(
                 name="id",
-                type=aws_dynamodb.AttributeType.STRING
+                type=aws_dynamodb.AttributeType.NUMBER
             )
         )
 
