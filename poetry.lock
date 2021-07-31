@@ -169,6 +169,26 @@ jsii = ">=1.21.0,<2.0.0"
 publication = ">=0.0.3"
 
 [[package]]
+name = "aws-cdk.aws-dynamodb"
+version = "1.90.1"
+description = "The CDK Construct Library for AWS::DynamoDB"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+"aws-cdk.aws-applicationautoscaling" = "1.90.1"
+"aws-cdk.aws-cloudwatch" = "1.90.1"
+"aws-cdk.aws-iam" = "1.90.1"
+"aws-cdk.aws-kms" = "1.90.1"
+"aws-cdk.aws-lambda" = "1.90.1"
+"aws-cdk.core" = "1.90.1"
+"aws-cdk.custom-resources" = "1.90.1"
+constructs = ">=3.2.0,<4.0.0"
+jsii = ">=1.21.0,<2.0.0"
+publication = ">=0.0.3"
+
+[[package]]
 name = "aws-cdk.aws-ec2"
 version = "1.90.1"
 description = "The CDK Construct Library for AWS::EC2"
@@ -621,7 +641,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "4ef346b10c29e70f8107efbaaaf29622d56d3646c9ce0020803a27fd2a5a2f20"
+content-hash = "be0476a0e7e01a430fa4501c1507d749a4c02889aec8931bb8c53c8cb1054433"
 
 [metadata.files]
 attrs = [
@@ -663,6 +683,10 @@ attrs = [
 "aws-cdk.aws-cognito" = [
     {file = "aws-cdk.aws-cognito-1.90.1.tar.gz", hash = "sha256:91b9afcede38454bfaca2174fa7f43f6752f6cb8fe648260872a16e029c25903"},
     {file = "aws_cdk.aws_cognito-1.90.1-py3-none-any.whl", hash = "sha256:7f45adbc0f16c6b5094cf860404babc2fb27f40f792650e6a800144034131b95"},
+]
+"aws-cdk.aws-dynamodb" = [
+    {file = "aws-cdk.aws-dynamodb-1.90.1.tar.gz", hash = "sha256:e96ed340ed28c520c297be3542c4e532188f22d7aba8d1291a16fe25b39f6437"},
+    {file = "aws_cdk.aws_dynamodb-1.90.1-py3-none-any.whl", hash = "sha256:ff8c9caf3951d7c5c4d7b4a957d57a5cfb5cf19068d97fd2bf68f65c76eec532"},
 ]
 "aws-cdk.aws-ec2" = [
     {file = "aws-cdk.aws-ec2-1.90.1.tar.gz", hash = "sha256:9e32ef8ba98057a60d8103df21af47f924f6f7d278e2a1684a3fe1760dba4c7f"},

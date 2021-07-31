@@ -2,9 +2,11 @@ from aws_cdk import (
     core,
     aws_apigateway,
     aws_lambda,
+    aws_dynamodb,
 )
 
 ZAPPA_LAMBDA_PACKAGE = "build/lambda_output.zip"
+DYNAMO_TABLE_NAME = "SOME_TABLE"
 
 
 class CdkGitbotStack(core.Stack):
@@ -21,6 +23,20 @@ class CdkGitbotStack(core.Stack):
             handler="handler.lambda_handler",
             timeout=core.Duration.seconds(15)
         )
+
+        # create dynamo table
+        dynamo_table = aws_dynamodb.Table(
+            scope=self,
+            id="DemoTable",
+            partition_key=aws_dynamodb.Attribute(
+                name="id",
+                type=aws_dynamodb.AttributeType.NUMBER
+            )
+        )
+
+        # Wire up the table and the function
+        dynamo_table.grant_read_write_data(handler)
+        handler.add_environment("DYNAMO_TABLE_NAME", dynamo_table.table_name)
 
         # define the apigateway
         api = aws_apigateway.LambdaRestApi(
